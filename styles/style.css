@@ -6,6 +6,12 @@
   padding: 16px;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .scores {
   font-size: 24px;
   font-weight: 500;
@@ -21,4 +27,15 @@
 
 button {
   font-size: 48px;
+}
+
+#reset {
+  display: flex;
+  justify-content: center;
+  border: 1px solid blue;
+  padding: 16px;
+}
+
+#reset > button {
+  font-size: 24px;
 }

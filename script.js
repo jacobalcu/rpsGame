@@ -80,6 +80,15 @@ const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 const playerText = document.getElementById("playerScore");
 const compText = document.getElementById("compScore");
+const reset = document.getElementById("reset");
+
+reset.addEventListener("click", () => {
+  playerScore = 0;
+  compScore = 0;
+  totalGames = 0;
+  round = 0;
+  updateScores(0, 0);
+});
 
 rockBtn.addEventListener("click", () => {
   let compChoice = getComputerChoice();
