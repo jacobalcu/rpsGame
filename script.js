@@ -1,41 +1,39 @@
-// let getComputerChoice = () => {
-//     let numChoice = Math.floor(Math.random() * 3);
-//     let choice = ((numChoice==0) ? 'rock' : (numChoice==1) ? 'paper' : 'scissors');
-//     return choice;
-// }
+let getComputerChoice = () => {
+  let numChoice = Math.floor(Math.random() * 3);
+  let choice = numChoice == 0 ? "rock" : numChoice == 1 ? "paper" : "scissors";
+  return choice;
+};
 
-// let playRound = (playerSelection, computerSelection) => {
-//     let retMessage;
-//     // 0 = tie, 1 = computer, 2 = player
-//     let winner;
-//     if (playerSelection == computerSelection) {
-//         retMessage = "You tied!";
-//         winner = 0;
-//     }
-//     else if (playerSelection == 'rock' && computerSelection == 'paper') {
-//         retMessage = "You Lose! Paper beats Rock";
-//         winner = 1;
-//     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-//         retMessage = "You Win! Rock beats Scissors";
-//         winner = 2;
-//     }
-//     else if (playerSelection == 'paper' && computerSelection == 'rock') {
-//         retMessage = "You Win! Paper beats Rock";
-//         winner = 2;
-//     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-//         retMessage = "You Lose! Scissors beats Paper";
-//         winner = 1;
-//     }
-//     else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-//         retMessage = "You Win! Scissors beats Paper";
-//         winner = 2;
-//     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-//         retMessage = "You Lose! Rock beats Scissors";
-//         winner = 1;
-//     }
-//     console.log(retMessage);
-//     return winner;
-// }
+let playRound = (playerSelection, computerSelection) => {
+  let retMessage;
+  // 0 = tie, 1 = computer, 2 = player
+  let winner;
+  if (playerSelection == computerSelection) {
+    retMessage = "You tied!";
+    winner = 0;
+  } else if (playerSelection == "rock" && computerSelection == "paper") {
+    retMessage = "You Lose! Paper beats Rock";
+    winner = 1;
+  } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    retMessage = "You Win! Rock beats Scissors";
+    winner = 2;
+  } else if (playerSelection == "paper" && computerSelection == "rock") {
+    retMessage = "You Win! Paper beats Rock";
+    winner = 2;
+  } else if (playerSelection == "paper" && computerSelection == "scissors") {
+    retMessage = "You Lose! Scissors beats Paper";
+    winner = 1;
+  } else if (playerSelection == "scissors" && computerSelection == "paper") {
+    retMessage = "You Win! Scissors beats Paper";
+    winner = 2;
+  } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    retMessage = "You Lose! Rock beats Scissors";
+    winner = 1;
+  }
+  let showMess = document.getElementById("resultText");
+  showMess.textContent = retMessage;
+  return winner;
+};
 
 // let game = () => {
 //     let playerScore = 0;
@@ -64,3 +62,24 @@
 // }
 
 // game();
+
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
+let wins = 0;
+let totalGames = 0;
+
+rockBtn.addEventListener("click", () => {
+  let compChoice = getComputerChoice();
+  playRound("rock", compChoice);
+});
+
+paperBtn.addEventListener("click", () => {
+  let compChoice = getComputerChoice();
+  playRound("paper", compChoice);
+});
+
+scissorsBtn.addEventListener("click", () => {
+  let compChoice = getComputerChoice();
+  playRound("scissors", compChoice);
+});
