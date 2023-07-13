@@ -63,34 +63,6 @@ let gameOver = (playerScore, compScore) => {
   return 0;
 };
 
-// let game = () => {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     let tie = 0;
-//     for (let i = 0; i < 5; i++) {
-//         const playerSelection = prompt('Rock/Paper/Scissors...').toLowerCase();
-//         const computerSelection = getComputerChoice();
-//         let roundWin = playRound(playerSelection, computerSelection);
-//         if (roundWin == 0) {
-//             tie++;
-//         } else if (roundWin == 1) {
-//             computerScore++;
-//         } else {
-//             playerScore++;
-//         }
-//     }
-
-//     if (playerScore == computerScore) {
-//         console.log(`You tied! Player: ${playerScore}, Computer: ${computerScore}, Tie: ${tie}`);
-//     } else if (playerScore < computerScore) {
-//         console.log(`You lose! Player: ${playerScore}, Computer: ${computerScore}, Tie: ${tie}`);
-//     } else {
-//         console.log(`You win! Player: ${playerScore}, Computer: ${computerScore}, Tie: ${tie}`);
-//     }
-// }
-
-// game();
-
 let playerScore = 0;
 let compScore = 0;
 let totalGames = 0;
