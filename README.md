@@ -1,2 +1,2 @@
 # rpsGame
-Rock, Paper, Scissors browser game
+Check out my [Rock Paper Scissors Game](https://jacobalcu.github.io/rpsGame/).
