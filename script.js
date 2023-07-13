@@ -4,6 +4,13 @@ let getComputerChoice = () => {
   return choice;
 };
 
+let updateScores = (player, computer) => {
+  let playerScore = document.getElementById("playerScore");
+  let computerScore = document.getElementById("compScore");
+  playerScore.textContent = `Player: ${player}`;
+  computerScore.textContent = `Computer: ${computer}`;
+};
+
 let playRound = (playerSelection, computerSelection) => {
   let retMessage;
   // 0 = tie, 1 = computer, 2 = player
@@ -63,23 +70,40 @@ let playRound = (playerSelection, computerSelection) => {
 
 // game();
 
+let playerScore = 0;
+let compScore = 0;
+let totalGames = 0;
+let round = 0;
+
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
-let wins = 0;
-let totalGames = 0;
+const playerText = document.getElementById("playerScore");
+const compText = document.getElementById("compScore");
 
 rockBtn.addEventListener("click", () => {
   let compChoice = getComputerChoice();
-  playRound("rock", compChoice);
+  round = playRound("rock", compChoice);
+  totalGames++;
+  if (round == 1) compScore++;
+  else if (round == 2) playerScore++;
+  updateScores(playerScore, compScore);
 });
 
 paperBtn.addEventListener("click", () => {
   let compChoice = getComputerChoice();
-  playRound("paper", compChoice);
+  round = playRound("paper", compChoice);
+  totalGames++;
+  if (round == 1) compScore++;
+  else if (round == 2) playerScore++;
+  updateScores(playerScore, compScore);
 });
 
 scissorsBtn.addEventListener("click", () => {
   let compChoice = getComputerChoice();
-  playRound("scissors", compChoice);
+  round = playRound("scissors", compChoice);
+  totalGames++;
+  if (round == 1) compScore++;
+  else if (round == 2) playerScore++;
+  updateScores(playerScore, compScore);
 });

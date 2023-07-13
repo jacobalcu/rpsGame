@@ -1,8 +1,14 @@
-.container {
+.container,
+.scores {
   display: flex;
   border: 1px solid black;
   justify-content: space-around;
   padding: 16px;
+}
+
+.scores {
+  font-size: 24px;
+  font-weight: 500;
 }
 
 #resultText {
