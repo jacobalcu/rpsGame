@@ -24,7 +24,7 @@ body {
 
 .scores {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   justify-content: center;
   gap: 12%;
 }
@@ -42,12 +42,12 @@ body {
   border: none;
   padding: 8px;
   border-radius: 8%;
-  background-color: #d9d4d4;
+  background-color: #c8c6c6;
   cursor: pointer;
 }
 
 .container button:hover {
-  background-color: #c8c6c6;
+  background-color: #bab7b7;
 }
 
 #reset {
@@ -62,6 +62,6 @@ body {
   border: none;
   padding: 6px;
   border-radius: 8%;
-  background-color: #d9d4d4;
+  background-color: #c8c6c6;
   cursor: pointer;
 }
