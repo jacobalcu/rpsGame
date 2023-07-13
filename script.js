@@ -11,6 +11,14 @@ let updateScores = (player, computer) => {
   computerScore.textContent = `Computer: ${computer}`;
 };
 
+let resetFunc = () => {
+  playerScore = 0;
+  compScore = 0;
+  totalGames = 0;
+  round = 0;
+  //   updateScores(0, 0);
+};
+
 let playRound = (playerSelection, computerSelection) => {
   let retMessage;
   // 0 = tie, 1 = computer, 2 = player
@@ -40,6 +48,19 @@ let playRound = (playerSelection, computerSelection) => {
   let showMess = document.getElementById("resultText");
   showMess.textContent = retMessage;
   return winner;
+};
+
+let gameOver = (playerScore, compScore) => {
+  if (playerScore == 5) {
+    let showMess = document.getElementById("resultText");
+    showMess.textContent = "You win!";
+    return 1;
+  } else if (compScore == 5) {
+    let showMess = document.getElementById("resultText");
+    showMess.textContent = "You lose!";
+    return 1;
+  }
+  return 0;
 };
 
 // let game = () => {
@@ -83,10 +104,7 @@ const compText = document.getElementById("compScore");
 const reset = document.getElementById("reset");
 
 reset.addEventListener("click", () => {
-  playerScore = 0;
-  compScore = 0;
-  totalGames = 0;
-  round = 0;
+  resetFunc();
   updateScores(0, 0);
 });
 
@@ -97,6 +115,8 @@ rockBtn.addEventListener("click", () => {
   if (round == 1) compScore++;
   else if (round == 2) playerScore++;
   updateScores(playerScore, compScore);
+  let result = gameOver(playerScore, compScore);
+  if (result == 1) resetFunc();
 });
 
 paperBtn.addEventListener("click", () => {
@@ -106,6 +126,8 @@ paperBtn.addEventListener("click", () => {
   if (round == 1) compScore++;
   else if (round == 2) playerScore++;
   updateScores(playerScore, compScore);
+  let result = gameOver(playerScore, compScore);
+  if (result == 1) resetFunc();
 });
 
 scissorsBtn.addEventListener("click", () => {
@@ -115,4 +137,6 @@ scissorsBtn.addEventListener("click", () => {
   if (round == 1) compScore++;
   else if (round == 2) playerScore++;
   updateScores(playerScore, compScore);
+  let result = gameOver(playerScore, compScore);
+  if (result == 1) resetFunc();
 });
